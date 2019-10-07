@@ -79,12 +79,14 @@
 </head>
 <body>
 <div id="wrap">
-	<div id="header"><h3><a href="/SpringProgramming2">Spring Programming2</a></h3></div>
+	<div id="header"><h3><a href="/SpringProgramming5">Spring Programming5</a></h3></div>
 	<div id="content">
 		<div id="sideBar">
 			<ol>
-				<p>Request Mapping</p>
-				<li><a href="info" target="iframe">Request Mapping1</a></li>
+				<li><a href="info" target="iframe">create controller</a></li>
+				<li><a href="ch02/content" target="iframe">Request Mapping</a></li>
+				<li><a href="ch03/content" target="iframe">Request Parameter</a></li>
+				<li><a href="ch04/content" target="iframe">Read Request header & cookie</a></li>
 			</ol>
 		</div>
 		<div id="center">
