@@ -2,6 +2,8 @@ package com.mycompany.controller;
 
 import java.util.Date;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -38,5 +40,16 @@ public class Ch03Controller {
 		logger.info("mage: " + member.getMage());
 		logger.info("mbirth: " + member.getMbirth());
 		return "ch03/content";
+	}
+
+	@RequestMapping("/join3")
+	public String join3(Ch03Member member, HttpServletRequest request) {
+		logger.info("mid: " + member.getMid());
+		logger.info("mname: " + member.getMname());
+		
+		request.setAttribute("mid", member.getMid());
+		request.setAttribute("mname", member.getMname());
+		
+		return "ch03/join3";
 	}
 }
