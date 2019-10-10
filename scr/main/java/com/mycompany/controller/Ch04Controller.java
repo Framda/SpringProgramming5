@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class Ch04Controller {
 	private static final Logger logger = LoggerFactory.getLogger(Ch04Controller.class);
 	
-	@RequestMapping("/content")
+	@RequestMapping("/content") //@RequestHeader매개변수타입을 통해 요청HTTP의 header를 받아올 수 있다.
 	public String content(@RequestHeader("User-Agent") String userAgent, HttpServletRequest request) {
 		logger.info("userAgent: " + userAgent);
 		

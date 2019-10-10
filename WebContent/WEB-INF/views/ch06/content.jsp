@@ -18,11 +18,44 @@
 	function btnLogout() {
 		location.href = "logout";
 	}
+	
+	function jsonDownload1() {
+		$.ajax({
+			url: "jsonDownload1",
+			success: function(data) {
+				var html = "";
+				html += "<tr>";
+				html += "	<th>"+ data.bno +"</th>"
+				html += "	<th>"+ data.btitle +"</th>";
+				html += "	<th>"+ data.writer +"</th>";
+				html += "	<th>"+ data.date +"</th>";
+				html += "	<th>"+ data.hitcount+"</th>";
+				html += "</tr>";
+				$("tbody").append(html);
+			}
+		});
+	}
+	function jsonDownload2() {
+		$.ajax({
+			url: "jsonDownload2",
+			success: function(data) {
+				var html = "";
+				html += "<tr>";
+				html += "	<th>"+ data.bno +"</th>"
+				html += "	<th>"+ data.btitle +"</th>";
+				html += "	<th>"+ data.writer +"</th>";
+				html += "	<th>"+ data.date +"</th>";
+				html += "	<th>"+ data.hitcount+"</th>";
+				html += "</tr>";
+				$("tbody").append(html);
+			}
+		});
+	}
 </script>
 
 </head>
 <body>
-<h5>[content.jsp]</h5>
+<h5>HttpSession Log in</h5>
 <div>
 	<c:if test="${loginResult != 'success'}">
 		<form id="loginForm" method="post" action="login">
@@ -50,5 +83,58 @@
 		</div>
 	</c:if>
 </div>
+<br>
+<h5>OutputStream Log in</h5>
+<div>
+	<img src="<%=application.getContextPath()%>/resources/image/Desert.jpg" width="100"/><br><br>
+	<img src="fileDownload?fname=Desert.jpg" width="100"/><br><br>
+	<a href="fileDownload?fname=Desert.jpg">Download Image File</a>
+</div>
+
+<br>
+<h5>JSON Data Download Using Writer</h5>
+<a href="javascript:jsonDownload1()">Create by JSP</a>
+<a href="javascript:jsonDownload2()">Create by Controller</a>
+<div id="">
+<table class="table table-sm">
+	<thead>
+		<tr>
+			<th scope="col">Number</th>
+			<th scope="col">Title</th>
+			<th scope="col">Writer</th>
+			<th scope="col">Date</th>
+			<th scope="col">view</th>
+		</tr>
+	</thead>
+	<tbody>
+	
+	</tbody>
+</table>
+</div>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
